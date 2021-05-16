@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Cadastro</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/formulario2.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="js/jquery.mask.js"></script>    
+<script>
+//rg
+    $(function() {
+
+      var regExp = /^(\w{2,2})-(\d{2,2})+.+(\d{3,3})+.+(\d{3,3})$/;
+
+$('[name="rg"]').on('keyup', function() {
+  $('.message').hide();
+  regExp.test($(this).val()) ? $('.message.success').show() : $('.message.error').show();
+});
+});
+
+//email
+$(function(){
+
+var regExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+;
+
+$('[type="email"]').on('keyup', function() {
+  $('.message').hide();
+  regExp.test( $(this).val() ) ? $('.email.success').show()&&$('.email.error').hide() : $('.email.error').show()&&$('.email.success').hide();
+});
+
+});
+
+//telefone
+$(function(){
+
+var regExp = /^(\(?\d{2}\)?\s)?(\d{4,5}\-?\d{4})$/
+;
+
+$('[name="tel"]').on('keyup', function() {
+  $('.message').hide();
+  regExp.test( $(this).val() ) ? $('.telefone.success').show()&&$('.telefone.error').hide() : $('.telefone.error').show()&&$('.telefone.success').hide();
+});
+
+});
+
+//cpf
+$(function(){
+
+var regExp = /^([0-9]{2}[\.][0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-][0-9]{2})|([0-9]{3}[\.][0-9]{3}[\.][0-9]{3}[-][0-9]{2})$/
+;
+
+$('[name="cpf"]').on('keyup', function() {
+  $('.message').hide();
+  regExp.test( $(this).val() ) ? $('.cpf.success').show()&&$('.cpf.error').hide() : $('.cpf.error').show()&&$('.cpf.success').hide();
+});
+
+});
+
+//senha
+$(function(){
+
+var regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/;
+
+$('[name="senha"]').on('keyup', function() {
+  $('.message').hide();
+  regExp.test( $(this).val() ) ? $('.senha.success').show()&&$('.senha.error').hide() : $('.senha.error').show()&&$('.senha.success').hide();
+});
+
+});
+
+//endereço ([\w\W]+)\s(\d+)
+$(function(){
+
+var regExp = /^([\w\W]+)\,\s(\d+)$/;
+
+$('[name="endereco"]').on('keyup', function() {
+  $('.message').hide();
+  regExp.test( $(this).val() ) ? $('.ende.success').show()&&$('.ende.error').hide() : $('.ende.error').show()&&$('.ende.success').hide();
+});
+
+});
+
+</script>
+<style type="text/css">
+    * {
+padding:0;
+margin:0;
+vertical-align:baseline;
+list-style:none;
+border:0
+}
+
+.message {
+      font: 15px Helvetica, Arial, Sans-serif;
+      padding: 10px;
+      display: none;
+      color: #fff;
+      width: 100%;
+    }
+
+    .email {
+      font: 15px Helvetica, Arial, Sans-serif;
+      padding: 10px;
+      display: none;
+      color: #fff;
+      width: 100%;
+    }
+
+    .telefone {
+      font: 15px Helvetica, Arial, Sans-serif;
+      padding: 10px;
+      display: none;
+      color: #fff;
+      width: 100%;
+    }
+
+    .cpf {
+      font: 15px Helvetica, Arial, Sans-serif;
+      padding: 10px;
+      display: none;
+      color: #fff;
+      width: 100%;
+    }
+    
+    .senha {
+      font: 15px Helvetica, Arial, Sans-serif;
+      padding: 10px;
+      display: none;
+      color: #fff;
+      width: 100%;
+    }
+
+    .ende {
+      font: 15px Helvetica, Arial, Sans-serif;
+      padding: 10px;
+      display: none;
+      color: #fff;
+      width: 100%;
+    }
+
+    .error {
+      background: red;
+      margin-top: 10px;
+    }
+
+    .success {
+      background: green;
+      margin-top: 10px;
+    }
+
+
+    #Pagina{
+  margin: 0 auto; /* Altere para o valor da largura desejada. */
+  background-color: rgba(252, 252, 252, 0.5);
+  /*width: 95%;*/
+  padding: 10px;
+}
+#center{
+  margin: 0 auto;
+  /*width: 95%;  Altere para o valor da largura desejada. */
+}
+#conteudo{
+  margin: 0 auto;
+ /*/* width: 90%;/* Altere para o valor da largura desejada. */
+  background-color: white;
+}
+#dentro{
+  margin: 0 auto;
+ /* width: 85%; /* Altere para o valor da largura desejada. */
+  background-color: white;
+}
+div{
+    margin: 0 auto;
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding-bottom: 10px;
+}
+.col-6{
+    margin: 0 0;
+}
+input{
+    margin: 5px;
+    margin-bottom: 5px;
+}
+input[type=text]{
+    margin: 10px;
+    margin: 0 0;
+    margin-bottom: 5px;
+}
+input[type=password]{
+    margin: 10px;
+    margin: 0 0;
+    margin-bottom: 5px;
+}
+label{
+  margin: 5px;
+  margin: 0 0;
+  margin-bottom: 2px;
+}
+#meuform{
+    display: none;
+    margin: 0 0;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+body{
+    background-image: url("fundo.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+  margin : 0 auto;
+  padding: 15%;
+  background-attachment: fixed;
+  font-family:Didot;
+}
+h1,h2{
+    font-family: Jazz LET;
+}
+.erro{
+	background: red;
+}
+.valido{
+	background: green;
+}
+
+</style>
+</head>
+<body>
+  <div id="Pagina" class="container">
+    <div id="center">
+      <div id="Dentro">
+        <div   class="TituloForm">
+          <h1 align="center">Cadastro</h1>
+          </div>
+         <div class="form-row">
+        <form name="forml" action="insere.php" method="GET">
+          <div class="form-row">
+            <div class="col-6">
+              <label class="control-label" for="nome">Nome</label>
+             <input type="text" name="nome" id="nome" required class="form-control" placeholder="">
+             <small id="nomeHelpBlock" class="form-text text-muted">
+              Digite seu nome completo.
+            </small>
+            </div>
+
+            <div id="mail"class="col-6">
+              <label class="control-label" for="nome">Usuário</label>
+              <input type="text" required class="form-control" id="usuario" name="usuario" placeholder="">     
+              <small id="usuarioHelpBlock" class="form-text text-muted">
+                Digite um nome de usuário.
+              </small>
+            </div>
+
+            <div class="col-6">
+              <label class="control-label" for="nome">Senha</label>
+              <input type="password" class="form-control" required name="senha" id="senha" maxlength="45" placeholder="">
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                Sua senha deve ter entre 8 e 20 caracteres, os quais devem ser letras minusculas e maiúsculas, números e caracteres especiais pelo menos uma vez.
+              </small>
+              <br>
+              <span class="senha success badge badge-success">Válida!</span>
+              <span class="senha error badge badge-danger">Tente novamente!</span>
+            </div>
+
+            <div class="col-6">
+              <label class="control-label" for="nome">CPF</label>          
+              <input type="text" class="form-control " required   maxlength="14" name="cpf" id="cpf"  placeholder="" >
+              <small id="cpfHelpBlock" class="form-text text-muted">
+                Digite um CPF válido no formato XXX.XXX.XXX-XX
+              </small>
+              <br>
+              <span class="cpf success badge badge-success">Válido!</span>
+              <span class="cpf error badge badge-danger">Tente novamente!</span>
+            </div>
+
+            <div class="col-6">
+              <label class="control-label" for="nome">Telefone</label>
+              <input type="text" class="form-control" required name="tel" id="tel" maxlength="14" placeholder="">
+              <small id="telHelpBlock" class="form-text text-muted">
+                Digite um numero de telefone ou celular no formato (DD) XXXXX-XXXX .
+              </small>
+              <br>
+              <span class="telefone success badge badge-success">Válido!</span>
+              <span class="telefone error badge badge-danger">Tente novamente!</span>
+            </div>
+
+            <div class="col-6">
+              <label class="control-label" for="nome">RG</label>
+              <input type="text" class="form-control" required name="rg" id="rg" maxlength="13" placeholder="">
+              <small id="telHelpBlock" class="form-text text-muted">
+                Digite um RG válido no formato WW-XXX.XXX.XX .
+              </small>
+              <br>
+              <span class="message success badge badge-success">Válido!</span>
+              <span class="message error badge badge-danger">Tente novamente!</span>
+			 </div>
+
+             <div class="col-6">
+                <label class="control-label" for="nome">Email</label>
+                <input type="email" class="form-control" required name="email" id="email" maxlength="55" placeholder="">
+                <br>
+                <span class="email success badge badge-success">Válido!</span>
+                <span class="email error badge badge-danger">Tente novamente!</span>
+              </div>
+
+             <div class="col-6">
+              <label class="control-label" for="nome">Endereço</label>
+              <input type="text" required class="form-control" name="endereco" id="endereco" maxlength="45" placeholder="">
+              <small id="telHelpBlock" class="form-text text-muted">
+                Digite um endereço. EX: Nome da rua, 25.
+              </small>
+              <br>
+              <span class="ende success badge badge-success">Válido!</span>
+              <span class="ende error badge badge-danger">Tente novamente!</span>
+            </div>
+            
+             <div class="col-6">
+              <label class="control-label" for="nome">Data de nascimento</label>
+              <input type="number" class="form-control" name="dat" required id="dat" maxlength="2" placeholder="Dia">
+              <input type="number" class="form-control" name="mes" required id="mes" maxlength="2" placeholder="Mês">
+              <input type="number" class="form-control" name="ano" required id="ano" maxlength="2" placeholder="Ano">
+             </div>
+<div class="col-auto">
+  <label>Selecione seu tipo de conta</label>
+             <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" value="1" required>
+              <label class="custom-control-label" for="customControlValidation2">Cliente</label>
+            </div>
+            <div class="custom-control custom-radio mb-3">
+              <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" value="2" required>
+              <label class="custom-control-label" for="customControlValidation3">Funcionário</label>
+            </div>
+
+              <script type="text/javascript">$('input[name="radio-stacked"]').change(function () {
+                  if ($('input[name="radio-stacked"]:checked').val() === "2") {
+                      $('#meuform').show().prop("disabled", false);
+                      $("#idFunc").prop('required',true);
+                  } else {
+                      $('#meuform').hide().prop("disabled", true);
+                      $("#idFunc").prop('required',false);
+                  }
+              });
+              </script>
+              <br>
+
+              <div id="meuform"  class="col-auto" >
+                  <label> Id do funcionario</label><br>
+                 <input class="form-control" type="text" name="idFunc"  id="idFunc" placeholder="" > 
+				 <small id="telHelpBlock" class="form-text text-muted">
+					Digite seu id de funcionário.
+				 </small>
+              </div>
+            </div>
+
+          </div>
+
+            <div  class="row d-flex justify-content-center" id="x"><!--Botoes-->
+
+              <a href="Entrar.html">
+                <Button id="bot" class="btn btn-dark btn-lg form-btn" type="button" >Voltar</Button>
+              </a>
+             <input class="btn btn-dark btn-lg form-btn" type="submit" for="form1" value="Enviar"/>
+              <input id="bot" class="btn btn-dark btn-lg form-btn"  type="reset" value="Resetar">
+            </div>
+            </form>
+            </div>
+            </div>
+            </div>
+            </div>
+            </body>
+            </html>
